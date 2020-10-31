@@ -22,7 +22,7 @@ class WebglHover {
       uniforms: {
         time: {
           name: "uTime",
-          type: "1f", // this means our uniform is a float
+          type: "1f",
           value: 0
         },
         mousepos: {
@@ -42,6 +42,7 @@ class WebglHover {
         }
       }
     }
+    this.initPlane()
   }
 
   initPlane() {
@@ -81,9 +82,8 @@ class WebglHover {
 document.querySelectorAll('.slide').forEach(slide => {
   const canvas = slide.querySelector('.canvas')
   const planeElement = slide.querySelector('.plane')
-  const webgl = new WebglHover({
+  new WebglHover({
     canvas,
     planeElement
   })
-  webgl.initPlane()
 })
